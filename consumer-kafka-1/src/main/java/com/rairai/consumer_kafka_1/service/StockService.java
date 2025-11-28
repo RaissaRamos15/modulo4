@@ -10,16 +10,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Serviço simples de gerenciamento de estoque para o consumidor de estoque.
- *
- * - Mantém um estoque em memória (produtoId -> quantidade disponível).
- * - Permite reservar produtos para um pedido de forma atômica (síncrona).
- * - Métodos utilitários para consulta e reposição de estoque (úteis para testes).
- *
- * Observação: este é um exemplo educacional. Em produção, o controle de estoque
- * precisa ser persistente, tolerante a falhas e coordenado (transações, locks distribuídos, etc).
- */
+
 @Service
 public class StockService {
 

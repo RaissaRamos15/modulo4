@@ -1,6 +1,7 @@
 package com.rairai.consumer_kafka_2.consumer;
 
 import com.rairai.consumer_kafka_2.model.Order;
+import com.rairai.consumer_kafka_2.model.Invoice;
 import com.rairai.consumer_kafka_2.service.InvoiceService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
@@ -35,7 +36,7 @@ public class InvoiceConsumer {
             logger.info("Recebendo pedido para emissão de NF. key={}, orderId={}, partition={}, offset={}",
                     key, order.getId(), record.partition(), record.offset());
 
-            InvoiceService.Invoice invoice = invoiceService.generateInvoice(order);
+            Invoice invoice = invoiceService.generateInvoice(order);
             if (invoice != null) {
                 logger.info("NF emitida com sucesso. orderId={}, invoiceId={}, issuedAt={}",
                         order.getId(), invoice.getInvoiceId(), invoice.getIssuedAt());

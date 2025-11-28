@@ -1,5 +1,8 @@
 package com.rairai.consumer_kafka_2.model;
 
+import java.time.Instant;
+import java.util.List;
+
 public class Invoice {
     private String invoiceId;
     private String orderId;
